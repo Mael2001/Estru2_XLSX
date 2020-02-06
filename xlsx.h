@@ -188,6 +188,30 @@ class xlsx{
         memcpy(reserver,&Reserved,6);
         reserver[6]-'\0';
 
+        int nodir;
+        memcpy(&nodir,noDir,4);
+
+        int nofat;
+        memcpy(&nofat,noFat,4);
+
+        char fdir[5];
+        memcpy(fdir,&FDir,4);
+        fdir[4]='\0';
+
+        int trans;
+        memcpy(&trans,transSigna,4);
+
+        int minstream;
+        memcpy(&minstream,minStream,4);
+
+        char ffat[5];
+        memcpy(ffat,&FminFat,4);
+        ffat[4]='\0';
+
+        char fdiffat[5];
+        memcpy(fdiffat,FDifat,4);
+        fdiffat[4]='\0';
+
         int nodif;
         memcpy(&nodif,NoDifat,4);
 
@@ -200,13 +224,13 @@ class xlsx{
         cout<<"Sector Shift: "<<dec<<sector<<endl;
         cout<<"Mini Sector Shift: "<<dec<<minsec<<endl;
         cout<<"Reserved: "<<reserver<<endl;
-        cout<<"Number Of Directory Sectors: "<<endl;
-        cout<<"Number of FAT Sectors: "<<endl;
-        cout<<"First Directory Sector Location: "<<endl;
-        cout<<"Transaction Signature Number: "<<endl;
-        cout<<"Mini Stream CutOff Size: "<<endl;
-        cout<<"First Mini FAT Location: "<<endl;
-        cout<<"First DIFAT Sector Location: "<<endl;
+        cout<<"Number Of Directory Sectors: "<<nodir<<endl;
+        cout<<"Number of FAT Sectors: "<<nofat<<endl;
+        cout<<"First Directory Sector Location: "<<fdir<<endl;
+        cout<<"Transaction Signature Number: "<<trans<<endl;
+        cout<<"Mini Stream CutOff Size: "<<minstream<<endl;
+        cout<<"First Mini FAT Location: "<<ffat<<endl;
+        cout<<"First DIFAT Sector Location: "<<fdiffat<<endl;
         cout<<"Number Of DIFAT Sectors: "<<nodif<<endl;
         cout<<"*************************"<<endl;
     };
